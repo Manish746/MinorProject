@@ -1,15 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flybuy/screens/home/home_screen.dart';
-import 'package:flybuy/utils/sharedPrefs.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:zarees/components/custom_loader.dart';
+import 'package:zarees/models/app_model.dart';
+import 'package:zarees/screens/home/home_screen.dart';
+import 'package:zarees/screens/splash_screen/components/onboard.dart';
+import 'package:zarees/utils/sharedPrefs.dart';
 
 import '../../../constants.dart';
-import './build_dot.dart';
-import './splash_content.dart';
 import '../../../size_config.dart';
-import '../../sign_in/sign_in_screen.dart';
-import '../../../components/default_button.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -17,34 +17,28 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  int _currentPage = 0;
-  List<Map<String, String>> splashData = [
-    {
-      "text": "Welcome to FlyBuy, Let’s shop!",
-      "image": "assets/images/splash_1.png"
-    },
-    {
-      "text": "We help people connect with store \naround the world",
-      "image": "assets/images/splash_2.png"
-    },
-    {
-      "text": "We show the easy way to shop. \nJust stay at home with us",
-      "image": "assets/images/splash_3.png"
-    },
-  ];
-
-  String token = "";
+  // String token = "";
 
   @override
   void initState() {
-    token = StorageUtil.getString(kUserToken);
-    print("token $token");
+    // token = StorageUtil.getString(kUserToken);
+    String _isFirst = StorageUtil.getString(AppModel.isFirst);
+    // print("token $token");
     super.initState();
     Timer(
       Duration(seconds: 1),
       () {
-        if (token != null && token.isNotEmpty) {
+        // if (token != null && token.isNotEmpty) {
+        //   Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+        // } else {
+        //   Navigator.pushReplacementNamed(context, OnBoard.routeName);
+        // }
+        if (_isFirst != null &&
+            _isFirst.isNotEmpty &&
+            _isFirst.toLowerCase() == "true") {
           Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+        } else {
+          Navigator.pushReplacementNamed(context, OnBoard.routeName);
         }
       },
     );
@@ -53,49 +47,24 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
+    return Container(
+      height: SizeConfig.screenHeight,
+      width: SizeConfig.screenWidth,
+      decoration: BoxDecoration(
+        color: kDarkBlue,
+        image: DecorationImage(
+          image: AssetImage("assets/logo/zlogo.png"),
+          fit: BoxFit.contain,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 20.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Expanded(
-              flex: 3,
-              child: PageView.builder(
-                onPageChanged: (pageNumber) =>
-                    setState(() => _currentPage = pageNumber),
-                itemCount: splashData.length,
-                itemBuilder: (ctx, index) => SplashContent(
-                  text: splashData[index]['text'],
-                  image: splashData[index]['image'],
-                ),
-              ),
-            ),
-            SizedBox(height: 15),
-            Expanded(
-              flex: 2,
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                        splashData.length,
-                        (index) => BuildDot(
-                            pageNumber: index, currentPage: _currentPage)),
-                  ),
-                  Spacer(flex: 4),
-                  Padding(
-                    padding: EdgeInsets.all(getProportionateScreenWidth(20)),
-                    child: DefaultButton(
-                      text: "Continue",
-                      press: () {
-                        Navigator.pushReplacementNamed(
-                            context, SignInScreen.routeName);
-                      },
-                    ),
-                  ),
-                  Spacer(flex: 2),
-                ],
-              ),
+            SpinKitFadingCircle(
+              color: Colors.green,
+              //shape: BoxShape.circle,
             ),
           ],
         ),

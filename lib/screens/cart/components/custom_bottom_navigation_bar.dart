@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:zarees/models/Cart.dart';
 
 import '../../../size_config.dart';
 import '../../../components/default_button.dart';
 
-class CustomBottomNavigationBar extends StatelessWidget {
-  const CustomBottomNavigationBar({
+class CustomCartBottomNavigationBar extends StatelessWidget {
+  const CustomCartBottomNavigationBar({
     Key key,
   }) : super(key: key);
 
@@ -47,7 +48,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                   child: SvgPicture.asset("assets/icons/receipt.svg"),
                 ),
                 Spacer(),
-                Text("Add voucher code"),
+                // Text("Add voucher code"),
                 SizedBox(width: 10),
                 Icon(Icons.arrow_forward_ios_rounded, size: 12),
               ],
@@ -63,7 +64,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                     text: "Total:\n",
                     children: [
                       TextSpan(
-                        text: "\$232.2",
+                        text: "₹ 7001.0",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 16,

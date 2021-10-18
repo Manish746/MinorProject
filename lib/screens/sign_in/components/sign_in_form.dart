@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flybuy/components/custom_loader.dart';
-import 'package:flybuy/controllers/otp_generate_and_verify.dart';
-import 'package:flybuy/controllers/signIn_controller.dart';
-import 'package:flybuy/screens/home/home_screen.dart';
-import 'package:flybuy/screens/otp/otp_screens.dart';
+import 'package:zarees/components/custom_loader.dart';
+import 'package:zarees/controllers/otp_generate_and_verify.dart';
+import 'package:zarees/controllers/signIn_controller.dart';
+import 'package:zarees/screens/home/home_screen.dart';
+import 'package:zarees/screens/otp/otp_screens.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';

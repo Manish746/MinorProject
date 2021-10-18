@@ -23,13 +23,14 @@ class DiscountBanner extends StatelessWidget {
           color: kPrimaryColor, borderRadius: BorderRadius.circular(20)),
       child: Text.rich(
         TextSpan(
-          text: "A Summer Surprise\n",
+          text: "A Summer Surprise 🥳\n",
           style: TextStyle(
             color: Colors.white,
           ),
           children: [
             TextSpan(
-              text: "Cashback 20%",
+              // text: "Cashback 20%",
+              text: "Free delivery",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,

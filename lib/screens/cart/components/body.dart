@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flybuy/size_config.dart';
+import 'package:zarees/size_config.dart';
 
 import './cart_item_card.dart';
 import '../../../models/Cart.dart';

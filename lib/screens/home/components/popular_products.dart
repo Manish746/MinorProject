@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zarees/screens/product_list/product_list_screen.dart';
 
 import './section_title.dart';
 import '../../../size_config.dart';
@@ -15,7 +16,11 @@ class PopularProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SectionTitle(title: "Popular Products", press: () {}),
+        SectionTitle(
+            title: "Popular Products",
+            press: () {
+              Navigator.pushNamed(context, ProductListScreen.routeName);
+            }),
         SizedBox(height: getProportionateScreenHeight(20)),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -23,13 +28,13 @@ class PopularProducts extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ...List.generate(
-                demoProducts.length,
+                productList.length,
                 (index) => ProductCard(
-                  product: demoProducts[index],
+                  product: productList[index],
                   press: () => Navigator.pushNamed(
                     context,
                     ProductDetailsScreen.routeName,
-                    arguments: demoProducts[index],
+                    arguments: productList[index],
                   ),
                 ),
               ),

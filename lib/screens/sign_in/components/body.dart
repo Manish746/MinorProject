@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flybuy/constants.dart';
+import 'package:zarees/constants.dart';
 
 import './sign_in_form.dart';
 import '../../../size_config.dart';

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flybuy/utils/sharedPrefs.dart';
+import 'package:zarees/utils/sharedPrefs.dart';
 
 import '../apiConstant.dart';
 import '../constants.dart';

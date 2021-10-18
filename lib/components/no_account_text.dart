@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flybuy/screens/sign_up/sign_up_screen.dart';
+import 'package:zarees/screens/sign_up/sign_up_screen.dart';
 
 import '../constants.dart';
 

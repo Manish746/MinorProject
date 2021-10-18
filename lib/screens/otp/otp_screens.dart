@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:flybuy/controllers/otp_generate_and_verify.dart';
-import 'package:flybuy/screens/sign_in/sign_in_screen.dart';
-import 'package:flybuy/utils/countdownTimer.dart';
+import 'package:zarees/controllers/otp_generate_and_verify.dart';
+import 'package:zarees/screens/sign_in/sign_in_screen.dart';
+import 'package:zarees/utils/countdownTimer.dart';
 import '../../constants.dart';
 
 class OtpScreen extends StatefulWidget {

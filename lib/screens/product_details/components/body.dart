@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flybuy/components/default_button.dart';
+import 'package:zarees/components/default_button.dart';
 
 import '../../../size_config.dart';
 import './colors_dots.dart';

@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:flybuy/components/custom_loader.dart';
-import 'package:flybuy/controllers/otp_generate_and_verify.dart';
-import 'package:flybuy/controllers/signup_controller.dart';
-import 'package:flybuy/screens/otp/otp_screens.dart';
-import 'package:flybuy/screens/sign_in/sign_in_screen.dart';
-//import 'package:flybuy/screens/complete_profile/complete_profile_screen.dart';
+import 'package:zarees/components/custom_loader.dart';
+import 'package:zarees/controllers/otp_generate_and_verify.dart';
+import 'package:zarees/controllers/signup_controller.dart';
+import 'package:zarees/screens/otp/otp_screens.dart';
+import 'package:zarees/screens/sign_in/sign_in_screen.dart';
+//import 'package:zarees/screens/complete_profile/complete_profile_screen.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';

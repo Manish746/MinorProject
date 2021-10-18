@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flybuy/constants.dart';
-import 'package:flybuy/screens/cart/cart_screen.dart';
+import 'package:zarees/constants.dart';
+import 'package:zarees/screens/cart/cart_screen.dart';
 
 import './search_field.dart';
 import '../../../size_config.dart';

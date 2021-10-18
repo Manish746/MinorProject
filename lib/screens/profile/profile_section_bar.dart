@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../constants.dart';
-import '../../../size_config.dart';
-
+import '../../constants.dart';
+import '../../size_config.dart';
 
 class ProfileSectionButton extends StatelessWidget {
   const ProfileSectionButton({
@@ -43,9 +42,7 @@ class ProfileSectionButton extends StatelessWidget {
                 color: kPrimaryColor,
               ),
             ),
-            SizedBox(
-              width: getProportionateScreenWidth(20)
-            ),
+            SizedBox(width: getProportionateScreenWidth(20)),
             Text(
               text,
               style: TextStyle(color: Colors.black54),

@@ -1,4 +1,4 @@
-package com.example.flybuy
+package com.manish.zarees
 
 import io.flutter.embedding.android.FlutterActivity
 

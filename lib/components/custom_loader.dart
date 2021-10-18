@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:flybuy/size_config.dart';
+import 'package:zarees/size_config.dart';
 
 class CustomLoader extends StatelessWidget {
   const CustomLoader({Key key}) : super(key: key);

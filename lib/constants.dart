@@ -46,6 +46,8 @@ const String kUserName = 'fullname';
 const String kUserEmail = 'email';
 const String kUserContact = 'contact';
 
+const String localCartBox = "localCartBox";
+
 final otpInputDecoration = InputDecoration(
   contentPadding:
       EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
