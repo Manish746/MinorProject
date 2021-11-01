@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:zarees/screens/categories/categories.dart';
-import 'package:zarees/screens/home/home_screen.dart';
-//import 'package:zarees/screens/home/home_screen.dart';
-import 'package:zarees/screens/profile/profile_screen.dart';
-import 'package:zarees/size_config.dart';
-import 'package:zarees/utils/sharedPrefs.dart';
+import '../../screens/categories/categories.dart';
+import '../../screens/home/home_screen.dart';
+//import '../../screens/home/home_screen.dart';
+import '../../screens/profile/profile_screen.dart';
+import '../../size_config.dart';
+import '../../utils/sharedPrefs.dart';
 
 import '../constants.dart';
 

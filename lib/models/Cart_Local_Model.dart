@@ -8,9 +8,9 @@ class LocalCartModel {
   @HiveField(0)
   final String productId;
   @HiveField(1)
-  final int numOfItem;
+  int numOfItem;
   @HiveField(2)
-  final double price;
+  final int price;
   @HiveField(3)
   final String imageUrl;
   @HiveField(4)

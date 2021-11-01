@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:zarees/models/Cart.dart';
+import 'package:provider/provider.dart';
 
+import '../../../controllers/local_cart_controller.dart';
 import '../../../size_config.dart';
 import '../../../components/default_button.dart';
 
@@ -12,6 +13,7 @@ class CustomCartBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<LocalCartController>(context, listen: true);
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -64,7 +66,7 @@ class CustomCartBottomNavigationBar extends StatelessWidget {
                     text: "Total:\n",
                     children: [
                       TextSpan(
-                        text: "₹ 7001.0",
+                        text: "₹ ${provider.sumTotal}",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 16,

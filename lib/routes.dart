@@ -25,6 +25,6 @@ Map<String, WidgetBuilder> routes = {
   SignUpScreen.routeName: (ctx) => SignUpScreen(),
   ProfileScreen.routeName: (ctx) => ProfileScreen(),
   ForgotPasswordScreen.routeName: (ctx) => ForgotPasswordScreen(),
-  ProductDetailsScreen.routeName: (ctx) => ProductDetailsScreen(),
+  //ProductDetailsScreen.routeName: (ctx) => ProductDetailsScreen(),
   // CompleteProfileScreen.routeName: (ctx) => CompleteProfileScreen(),
 };

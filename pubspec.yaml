@@ -29,8 +29,10 @@ dependencies:
   dio: ^4.0.0
   flutter_spinkit: ^5.1.0
   shimmer: ^2.0.0
+  progress_state_button: ^1.0.3
+  progressive_image: ^2.0.0
   shared_preferences: ^2.0.5
-
+  
   path_provider: ^2.0.3
   hive: ^2.0.4
   hive_flutter: ^1.1.0

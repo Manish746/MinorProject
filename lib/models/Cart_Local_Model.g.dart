@@ -17,7 +17,7 @@ class LocalCartModelAdapter extends TypeAdapter<LocalCartModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return LocalCartModel(
-      price: fields[2] as double,
+      price: fields[2] as int,
       imageUrl: fields[3] as String,
       limit: fields[4] as int,
       pName: fields[5] as String,

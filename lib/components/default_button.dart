@@ -8,9 +8,11 @@ class DefaultButton extends StatelessWidget {
     Key key,
     this.text,
     this.press,
+    this.color,
   }) : super(key: key);
   final String text;
   final Function press;
+  final color;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,9 @@ class DefaultButton extends StatelessWidget {
         ),
       ),
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(kPrimaryColor),
+        backgroundColor: color != null
+            ? MaterialStateProperty.all(color)
+            : MaterialStateProperty.all(kPrimaryColor),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),

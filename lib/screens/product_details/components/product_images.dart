@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
-import '../../../models/Product.dart';
 
 class ProductImages extends StatefulWidget {
   const ProductImages({
     Key key,
-    @required this.product,
+    @required this.imageUrls,
   }) : super(key: key);
 
-  final Product product;
+  final List<String> imageUrls;
 
   @override
   _ProductImagesState createState() => _ProductImagesState();
@@ -21,25 +20,37 @@ class _ProductImagesState extends State<ProductImages> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          width: getProportionateScreenHeight(240),
-          child: AspectRatio(
-            aspectRatio: 1,
-            child: Image.asset(widget.product.images[selectedImage]),
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ...List.generate(
-              widget.product.images.length,
-              (index) => buildSmallImagePreview(index),
+    return Container(
+      //color: Color(0xFFF5F6F9),
+      color: Colors.blueGrey.shade200,
+
+      child: Column(
+        children: [
+          SizedBox(
+            width: getProportionateScreenHeight(240),
+            child: InteractiveViewer(
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: FadeInImage.assetNetwork(
+                  placeholder: "assets/logo/zlogo.png",
+                  image: widget.imageUrls[selectedImage],
+                ),
+              ),
             ),
-          ],
-        ),
-      ],
+          ),
+          Container(
+            height: 50,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return buildSmallImagePreview(index);
+              },
+              itemCount: widget.imageUrls.length,
+            ),
+          )
+        ],
+      ),
     );
   }
 
@@ -58,13 +69,13 @@ class _ProductImagesState extends State<ProductImages> {
         height: getProportionateScreenHeight(48),
         width: getProportionateScreenWidth(48),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.white38,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color: selectedImage == index ? kPrimaryColor : Colors.transparent,
           ),
         ),
-        child: Image.asset(widget.product.images[index]),
+        child: Image.network(widget.imageUrls[index]),
       ),
     );
   }

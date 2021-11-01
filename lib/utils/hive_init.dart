@@ -17,5 +17,5 @@ hiveInitializing() async {
 
   //Open Hive box
   //await Hive.openBox<CartModel>(boxCart);
-  await Hive.openBox<LocalCartModel>(localCartBox);
+  return await Hive.openBox<LocalCartModel>(localCartBox);
 }

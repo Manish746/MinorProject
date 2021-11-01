@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zarees/constants.dart';
+import 'package:zarees/screens/home/home_screen.dart';
 
 import './sign_in_form.dart';
 import '../../../size_config.dart';
@@ -17,6 +18,17 @@ class Body extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, HomeScreen.routeName);
+                      },
+                      child: Text("Skip"),
+                    ),
+                  ],
+                ),
                 SizedBox(height: SizeConfig.screenHeight * 0.16),
                 Text(
                   "Welcome Back",

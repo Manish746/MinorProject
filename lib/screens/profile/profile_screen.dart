@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zarees/constants.dart';
+import 'package:zarees/models/product/product_model.dart';
 import 'package:zarees/screens/sign_in/sign_in_screen.dart';
+import 'package:zarees/screens/splash_screen/splash_screen.dart';
 import 'package:zarees/utils/sharedPrefs.dart';
 
 import '../../size_config.dart';
@@ -119,7 +121,10 @@ class ProfileBody extends StatelessWidget {
             ProfileSectionButton(
               text: "Log Out",
               icon: "assets/icons/Log out.svg",
-              press: () {},
+              press: () async {
+                await StorageUtil.clrString();
+                Navigator.pushReplacementNamed(context, SplashScreen.routeName);
+              },
             ),
           ],
         ),

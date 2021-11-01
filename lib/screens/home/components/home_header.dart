@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:zarees/constants.dart';
+import 'package:zarees/controllers/local_cart_controller.dart';
 import 'package:zarees/screens/cart/cart_screen.dart';
+import 'package:zarees/utils/sharedPrefs.dart';
 
 import './search_field.dart';
 import '../../../size_config.dart';
@@ -36,9 +39,13 @@ class HomeHeader extends StatelessWidget {
               ),
               // SearchField(),
               IconButtonWithCounter(
-                svgSrc: 'assets/icons/Cart Icon.svg',
-                press: () => Navigator.pushNamed(context, CartScreen.routeName),
-              ),
+                  svgSrc: 'assets/icons/Cart Icon.svg',
+                  press: () =>
+                      Navigator.pushNamed(context, CartScreen.routeName),
+                  noOfItems: StorageUtil.getString(kUserToken).isEmpty
+                      ? Provider.of<LocalCartController>(context).cartLength
+                      : 0 //Todo Cart Items when signed In,
+                  ),
               // IconButtonWithCounter(
               //   svgSrc: 'assets/icons/Bell.svg',
               //   noOfItems: 3,
